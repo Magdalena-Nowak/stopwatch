@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/style.min.css">
+    <title>Stopwatch</title>
+</head>
+
+<body>
+    <section class="stopwatch text-center">
+        <div class="stopwatch__icons">
+            <i class="stopwatch__icon-options fas fa-paint-brush"></i>
+            <i class="stopwatch__icon-instruction fas fa-question"></i>
+        </div>
+        <h1 class="stopwatch__title">Stopwatch</h1>
+        <div class="stopwatch__time">
+            <p class="stopwatch__timer">0:00</p>
+            <p class="stopwatch__last-result">Ostatni pomiar: <span class="last-result"></span></p>
+        </div>
+        <div class="stopwatch__controls">
+            <div class="stopwatch__control-wrapper stopwatch__control-wrapper--play">
+                <div class="stopwatch__control-border"></div>
+                <button class="stopwatch__control btn btn-dark"><i
+                        class="fas fa-play"></i></button>
+            </div>
+            <div class="stopwatch__control-wrapper stopwatch__control-wrapper--pause">
+                <div class="stopwatch__control-border"></div>
+                <button class="stopwatch__control btn btn-dark"><i
+                        class="fas fa-pause"></i></button>
+            </div>
+            <div class="stopwatch__control-wrapper stopwatch__control-wrapper--stop">
+                <div class="stopwatch__control-border"></div>
+                <button class="stopwatch__control btn btn-dark"><i
+                        class="fas fa-stop"></i></button>
+            </div>
+            <div class="stopwatch__control-wrapper stopwatch__control-wrapper--delete">
+                <div class="stopwatch__control-border"></div>
+                <button class="stopwatch__control btn btn-dark"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="stopwatch__control-wrapper stopwatch__control-wrapper--registry">
+                <div class="stopwatch__control-border"></div>
+                <button class="stopwatch__control btn btn-dark">registry</button>
+            </div>
+        </div>
+        <div class="stopwatch__registry d-none"></div>
+        <div class="stopwatch__options-popup">
+            <div class="stopwatch__options-color stopwatch__options-color--red"></div>
+            <div class="stopwatch__options-color stopwatch__options-color--blue"></div>
+            <div class="stopwatch__options-color stopwatch__options-color--green"></div>
+        </div>
+        <div class="stopwatch__instruction-popup d-none">
+            <h2 class="stopwatch__instruction-title"></h2>
+            <div class="stopwatch__instruction">
+                <p><i class="fas fa-play"></i> - start</p>
+                <p><i class="fas fa-pause"></i> - pause</p>
+                <p><i class="fas fa-stop"></i> - stop</p>
+                <p><i class="fas fa-times"></i> - delete all registry</p>
+                <p><span>registry</span> - check previous measurements</p>
+            </div>
+            <button>Zamknij</button>
+        </div>
+    </section>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"
+        integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
+        integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
