@@ -19,12 +19,12 @@
 <body>
     <section class="stopwatch">
         <div class="stopwatch__icons">
-            <i class="stopwatch__icon-options fas fa-paint-brush"></i>
-            <i class="stopwatch__icon-instruction fas fa-question"></i>
+            <span class="stopwatch__icon-options"><i class=" fas fa-paint-brush"></i></span>
+            <span class="stopwatch__icon-instruction"><i class=" fas fa-question"></i></span>
         </div>
         <h1 class="stopwatch__title">Stopwatch</h1>
         <div class="stopwatch__time">
-            <p class="stopwatch__timer">0:00</p>
+            <p class="stopwatch__timer text-center">0:00</p>
             <p class="stopwatch__last-result">Ostatni pomiar: <span class="last-result"></span></p>
         </div>
         <div class="stopwatch__controls">
@@ -34,11 +34,14 @@
             <button class="stopwatch__control btn btn-dark"><i class="fas fa-times"></i></button>
             <button class="stopwatch__control stopwatch__control--registry btn btn-dark">registry</button>
         </div>
-        <div class="stopwatch__registry d-none"></div>
-        <div class="stopwatch__options-popup">
-            <div class="stopwatch__options-color stopwatch__options-color--red"></div>
-            <div class="stopwatch__options-color stopwatch__options-color--blue"></div>
-            <div class="stopwatch__options-color stopwatch__options-color--green"></div>
+        <div class="registry">
+            <ul class="registry__list">
+            </ul>
+        </div>
+        <div class="options">
+            <div class="options__color options__color--red"></div>
+            <div class="options__color options__color--blue"></div>
+            <div class="options__color options__color--green"></div>
         </div>
         <div class="instruction">
             <div class="instruction__wrapper">
