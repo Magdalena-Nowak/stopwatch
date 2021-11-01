@@ -21,7 +21,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
+  background: #737373;
+  background: radial-gradient(circle, rgba(16, 42, 34, 0.749) 0%, #141414 90%);
   color: aliceblue;
   border-radius: 0.5rem;
   box-shadow: 0.5rem 0.5rem 0.5rem black;
@@ -53,41 +54,31 @@ body {
 
 .stopwatch__controls {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.stopwatch__control-wrapper {
   margin: 1rem;
-  font-size: 1.4rem;
-  position: relative;
-}
-
-.stopwatch__control-wrapper--registry {
-  flex: 0 1 50%;
 }
 
 .stopwatch__control {
-  width: 90%;
-  height: 90%;
-  padding: 0.5rem 1rem;
+  flex: 1 1 15%;
+  margin: 1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: transparent;
+  transition: background-color 0.6s;
+  border: 0.1rem solid #57a8f3;
 }
 
-.stopwatch__control-border {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  background: linear-gradient(180deg, white 0%, #57a8f3 100%);
+.stopwatch__control--registry {
+  flex: 0 0 70%;
+  margin: 1rem auto;
+}
+
+.stopwatch__control:hover, .stopwatch__control:focus {
+  background-color: #57a8f3;
+  border-color: #57a8f3;
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
