@@ -6,11 +6,12 @@ const openInstructionBtn = document.querySelector(
 const instructionPopup = document.querySelector(".instruction");
 const closeInstructionBtn = document.querySelector(".instruction__btn");
 const controlsBtns = document.querySelector(".controls");
-const lastResult = document.querySelector(".last-result");
+const lastResult = document.querySelector(".stopwatch__last-result");
 const stopwatchTimer = document.querySelector(".stopwatch__timer");
 const optionsBtns = document.querySelector(".options");
 const registryList = document.querySelector(".registry__list");
 const registry = document.querySelector(".registry");
+const playBtn = document.querySelector(".controls__btn--play");
 
 let seconds = 0;
 let minutes = 0;
@@ -30,6 +31,7 @@ const closeInstructionPopup = () => {
 };
 
 const handleStart = () => {
+  clearInterval(timerId);
   timerId = setInterval(function () {
     seconds++;
     timer = seconds < 10 ? `${minutes}:0${seconds}` : `${minutes}:${seconds}`;
@@ -67,6 +69,8 @@ const handleStop = () => {
   stopwatchTimer.textContent = "0:00";
   seconds = 0;
   minutes = 0;
+  lastResult.firstElementChild.textContent = timer;
+  lastResult.style.visibility = "visible";
 };
 
 const handleDelete = () => {
@@ -75,6 +79,7 @@ const handleDelete = () => {
   seconds = 0;
   minutes = 0;
   number = 0;
+  lastResult.style.visibility = "hidden";
   const allItems = document.querySelectorAll(".registry__item");
   allItems.forEach((item) => {
     item.parentElement.removeChild(item);
@@ -99,7 +104,6 @@ controlsBtns.addEventListener("click", (e) => {
   } else if (e.target.classList.contains("controls__btn--delete")) {
     handleDelete();
   } else if (e.target.classList.contains("controls__btn--registry")) {
-    console.log("registry");
     handleRegistry();
   }
 });

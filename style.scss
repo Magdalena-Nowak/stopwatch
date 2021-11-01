@@ -1,5 +1,5 @@
 $blue: rgba(87, 168, 243, 1);
-$mainFontSize: 1.2rem;
+$mainFontSize: 1rem;
 $red: rgb(224, 53, 10);
 $green: rgb(12, 170, 59);
 
@@ -54,6 +54,9 @@ body {
     padding: 0.6rem;
     cursor: pointer;
   }
+  &__last-result {
+    visibility: hidden;
+  }
   &__title {
     font-size: $mainFontSize * 1.8;
   }
@@ -88,6 +91,7 @@ body {
 }
 
 .instruction {
+  font-size: $mainFontSize;
   @include flex(row, center, center);
   position: absolute;
   width: 100%;
@@ -110,7 +114,7 @@ body {
     color: $blue;
   }
   &__title {
-    font-size: $mainFontSize * 1.3;
+    font-size: $mainFontSize * 1.2;
   }
   &__wrapper {
     background-color: aliceblue;
@@ -178,5 +182,5 @@ body {
 }
 .options.active {
   opacity: 1;
-  transform: translateY(-80%);
+  transform: translateY(-70%);
 }
