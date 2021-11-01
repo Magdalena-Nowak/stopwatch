@@ -1,4 +1,8 @@
 $mainColor: rgba(87, 168, 243, 1);
+$mainFontSize: 1.2rem;
+$red: rgb(224, 53, 10);
+$green: rgb(12, 170, 59);
+
 * {
   margin: 0;
   padding: 0;
@@ -14,93 +18,150 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .stopwatch {
+  font-size: $mainFontSize;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
+  background: rgb(115, 115, 115);
+  background: radial-gradient(
+    circle,
+    rgba(16, 42, 34, 0.749) 0%,
+    rgba(20, 20, 20, 1) 90%
+  );
   color: aliceblue;
   border-radius: 0.5rem;
   box-shadow: 0.5rem 0.5rem 0.5rem black;
+  letter-spacing: 0.1rem;
+  position: relative;
   &__icons {
     align-self: flex-end;
-    cursor: pointer;
-    font-size: 1.2rem;
   }
   &__icon-options,
   &__icon-instruction {
     padding: 0.6rem;
+    cursor: pointer;
   }
   &__title {
-    font-size: 2.2rem;
+    font-size: $mainFontSize * 1.8;
   }
   &__timer {
-    font-size: 2.5rem;
+    font-size: $mainFontSize * 2.2;
     color: $mainColor;
-    letter-spacing: 0.15rem;
-  }
-  &__last-result {
-    font-size: 1.2rem;
   }
   &__controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-  }
-  &__control-wrapper {
     margin: 1rem;
-    font-size: 1.4rem;
-    position: relative;
-    &--registry {
-      flex: 0 1 50%;
-    }
   }
   &__control {
-    width: 90%;
-    height: 90%;
-    padding: 0.5rem 1rem;
+    flex: 1 1 15%;
+    margin: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.15rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    // z-index: 2;
+    background-color: transparent;
+    transition: background-color 0.6s;
+    border: 0.1rem solid $mainColor;
+    &--registry {
+      flex: 0 0 70%;
+      margin: 1rem auto;
+    }
+    &:hover,
+    &:focus {
+      background-color: $mainColor;
+      border-color: $mainColor;
+      outline: none;
+    }
   }
-  &__control-border {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(87, 168, 243, 1) 100%
-    );
-    // z-index: 1;
+}
+.instruction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+  color: rgba(20, 20, 20, 1);
+  display: none;
+  &__btn {
+    border: 0.15rem solid $mainColor;
+    padding: 0.5rem 2rem;
+    text-transform: uppercase;
+
+    transition: background-color 0.6s;
+    &:hover,
+    &:focus {
+      background-color: $mainColor;
+    }
+  }
+  &__icon {
+    color: $mainColor;
+  }
+  &__title {
+    font-size: $mainFontSize * 1.3;
+  }
+  &__wrapper {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    width: 25rem;
+    height: 25rem;
   }
 }
 
-// .stopwatch__control {
-//   position: absolute;
-//   content: "";
-//   top: 0;
-//   left: 0;
-//   width: 102%;
-//   height: 102%;
-//   background: rgb(255, 255, 255);
-//   background: linear-gradient(
-//     180deg,
-//     rgba(255, 255, 255, 1) 0%,
-//     rgba(87, 168, 243, 1) 100%
-//   );
-//   z-index: -1;
-// }
+.registry {
+  &__list {
+    list-style-type: none;
+    color: $mainColor;
+    font-size: $mainFontSize * 0.9;
+    font-weight: 300;
+  }
+  &__item {
+    margin: 0.2rem 0;
+  }
+  &__time {
+    font-weight: normal;
+  }
+}
+
+.options {
+  background-color: rgba(15, 15, 15, 0.6);
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  padding: 0.5rem 0.3rem;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  &__color {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    &--red {
+      background-color: $red;
+    }
+    &--blue {
+      background-color: $mainColor;
+    }
+    &--green {
+      background-color: $green;
+    }
+  }
+}
+.options.active {
+  opacity: 1;
+  transform: translateY(-80%);
+}
