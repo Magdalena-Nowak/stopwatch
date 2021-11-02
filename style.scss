@@ -1,7 +1,11 @@
-$blue: rgba(87, 168, 243, 1);
 $mainFontSize: 1rem;
-$red: rgb(224, 53, 10);
-$green: rgb(12, 170, 59);
+$red: #ff002b;
+$green: #55a630;
+$blue: rgba(87, 168, 243, 1);
+
+:root {
+  --firstColor: rgba(87, 168, 243, 1);
+}
 
 @mixin flex($direction, $justify, $align) {
   display: flex;
@@ -62,7 +66,7 @@ body {
   }
   &__timer {
     font-size: $mainFontSize * 2.2;
-    color: $blue;
+    color: var(--firstColor);
   }
 }
 
@@ -76,15 +80,15 @@ body {
     text-transform: uppercase;
     background-color: transparent;
     transition: background-color 0.6s;
-    border: 0.1rem solid $blue;
+    border: 0.1rem solid var(--firstColor);
     &--registry {
       flex: 0 0 70%;
       margin: 1rem auto;
     }
     &:hover,
     &:focus {
-      background-color: $blue;
-      border-color: $blue;
+      background-color: var(--firstColor);
+      border-color: var(--firstColor);
       outline: none;
     }
   }
@@ -104,14 +108,14 @@ body {
   pointer-events: none;
   transition: all 0.6s ease-in-out;
   &__btn {
-    border: 0.15rem solid $blue;
+    border: 0.15rem solid var(--firstColor);
     padding: 0.5rem 2rem;
     text-transform: uppercase;
     transition: background-color 0.6s ease-in-out;
-    background-color: $blue;
+    background-color: var(--firstColor);
   }
   &__icon {
-    color: $blue;
+    color: var(--firstColor);
   }
   &__title {
     font-size: $mainFontSize * 1.2;
@@ -135,7 +139,7 @@ body {
   display: none;
   &__list {
     list-style-type: none;
-    color: $blue;
+    color: var(--firstColor);
     font-size: $mainFontSize * 0.9;
     font-weight: 300;
   }

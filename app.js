@@ -8,16 +8,17 @@ const closeInstructionBtn = document.querySelector(".instruction__btn");
 const controlsBtns = document.querySelector(".controls");
 const lastResult = document.querySelector(".stopwatch__last-result");
 const stopwatchTimer = document.querySelector(".stopwatch__timer");
-const optionsBtns = document.querySelector(".options");
+const colorBtns = document.querySelector(".options");
 const registryList = document.querySelector(".registry__list");
 const registry = document.querySelector(".registry");
 const playBtn = document.querySelector(".controls__btn--play");
-
+let root = document.documentElement;
 let seconds = 0;
 let minutes = 0;
 let number = 0;
 let timer;
 let timerId;
+
 const openOptionsPopup = () => {
   optionsPopup.classList.toggle("active");
 };
@@ -62,22 +63,24 @@ const createRegistry = (number) => {
   registryList.append(registryItem);
 };
 
+const clearTimer = () => {
+  stopwatchTimer.textContent = "0:00";
+  seconds = 0;
+  minutes = 0;
+};
+
 const handleStop = () => {
   number++;
   clearInterval(timerId);
   createRegistry(number);
-  stopwatchTimer.textContent = "0:00";
-  seconds = 0;
-  minutes = 0;
+  clearTimer();
   lastResult.firstElementChild.textContent = timer;
   lastResult.style.visibility = "visible";
 };
 
 const handleDelete = () => {
   clearInterval(timerId);
-  stopwatchTimer.textContent = "0:00";
-  seconds = 0;
-  minutes = 0;
+  clearTimer();
   number = 0;
   lastResult.style.visibility = "hidden";
   const allItems = document.querySelectorAll(".registry__item");
@@ -105,5 +108,15 @@ controlsBtns.addEventListener("click", (e) => {
     handleDelete();
   } else if (e.target.classList.contains("controls__btn--registry")) {
     handleRegistry();
+  }
+});
+
+colorBtns.addEventListener("click", (e) => {
+  if (e.target.classList.contains("options__color--red")) {
+    root.style.setProperty("--firstColor", "#ff002b");
+  } else if (e.target.classList.contains("options__color--green")) {
+    root.style.setProperty("--firstColor", "#55a630");
+  } else if (e.target.classList.contains("options__color--blue")) {
+    root.style.setProperty("--firstColor", "rgba(87, 168, 243, 1)");
   }
 });
