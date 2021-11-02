@@ -1,3 +1,7 @@
+:root {
+  --firstColor: rgba(87, 168, 243, 1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +61,7 @@ body {
 
 .stopwatch__timer {
   font-size: 2.2rem;
-  color: #57a8f3;
+  color: var(--firstColor);
 }
 
 .controls {
@@ -75,7 +79,7 @@ body {
   text-transform: uppercase;
   background-color: transparent;
   transition: background-color 0.6s;
-  border: 0.1rem solid #57a8f3;
+  border: 0.1rem solid var(--firstColor);
 }
 
 .controls__btn--registry {
@@ -84,8 +88,8 @@ body {
 }
 
 .controls__btn:hover, .controls__btn:focus {
-  background-color: #57a8f3;
-  border-color: #57a8f3;
+  background-color: var(--firstColor);
+  border-color: var(--firstColor);
   outline: none;
 }
 
@@ -108,15 +112,15 @@ body {
 }
 
 .instruction__btn {
-  border: 0.15rem solid #57a8f3;
+  border: 0.15rem solid var(--firstColor);
   padding: 0.5rem 2rem;
   text-transform: uppercase;
   transition: background-color 0.6s ease-in-out;
-  background-color: #57a8f3;
+  background-color: var(--firstColor);
 }
 
 .instruction__icon {
-  color: #57a8f3;
+  color: var(--firstColor);
 }
 
 .instruction__title {
@@ -146,7 +150,7 @@ body {
 
 .registry__list {
   list-style-type: none;
-  color: #57a8f3;
+  color: var(--firstColor);
   font-size: 0.9rem;
   font-weight: 300;
 }
@@ -183,8 +187,8 @@ body {
 }
 
 .options__color--red {
-  background-color: #e0350a;
-  box-shadow: 0px 0px 8px 0px #e0350a;
+  background-color: #ff002b;
+  box-shadow: 0px 0px 8px 0px #ff002b;
 }
 
 .options__color--blue {
@@ -193,8 +197,8 @@ body {
 }
 
 .options__color--green {
-  background-color: #0caa3b;
-  box-shadow: 0px 0px 10px 0px #0caa3b;
+  background-color: #55a630;
+  box-shadow: 0px 0px 10px 0px #55a630;
 }
 
 .options.active {
